@@ -1,0 +1,25 @@
+<div id="<%= widget.id %>">
+
+  <div class="view-enhanced-content" aria-hidden="true">
+
+    <div id="<%= widget.id %>-dialog" class="reveal-modal widget-body" data-reveal aria-labelledby="<%= widget.id %>-dialog-title" aria-hidden="true" role="dialog">
+
+      <h3 id="<%= widget.id %>-dialog-title"> <%= widget.getTitle() %> </h3>
+
+      <div>
+        <%= widget.getContent() %>
+      </div>
+
+      <a class="close-reveal-modal" aria-label="Close">
+        &#215;
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="view-simple-content">
+    <%= widget.getSimpleContent() %>
+  </div>
+
+</div>

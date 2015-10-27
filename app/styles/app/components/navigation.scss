@@ -1,0 +1,206 @@
+/**
+ * Navigation bar
+ */
+
+@import '../../../bower_components/font-awesome/scss/font-awesome';
+@import '../_variables';
+
+nav.top-bar .name h1 {
+    color: $topbar-font-color;
+    font-family: $paragraph-font-family;
+    font-size: $topbar-title-font-size;
+    font-weight: normal;
+    padding: 0 12px; //
+    span.info {
+        font-size: inherit;
+    }
+}
+
+nav.top-bar .icon {
+    @extend .fa;
+    @extend .fa-fw;
+    @extend .fa-lg;
+}
+
+nav.top-bar ul.off-canvas-list ul {
+    list-style-type: none;
+}
+
+nav.top-bar .icon-menu {
+    @extend .fa;
+    @extend .fa-bars;
+    @extend .fa-lg;
+}
+
+.top-bar-section ul li {
+    > a, p, ul, ol, dl {
+        font-family: $paragraph-font-family;
+    }
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+    background-color: $topbar-content-menu-active;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button):hover {
+    background-color: $topbar-content-menu-active-hover;
+}
+
+ul.navitem-contents-menu-items li a {
+    line-height: 2em !important;
+    padding-bottom: 8px !important;
+    padding-top: 8px !important;
+}
+
+#navitem-options {
+    @extend .show-for-medium-up;
+
+    .icon {
+        @extend .fa-user;
+    }
+}
+
+#navitem-contents {
+    @extend .show-for-medium-up;
+
+    .icon {
+        @extend .fa-bars;
+    }
+}
+
+#navitem-contents-small {
+    @extend .show-for-small-only;
+}
+
+#navitem-previous {
+    @extend .show-for-medium-up;
+    //
+    a.disabled {
+        color: #555555;
+    }
+}
+
+#navitem-previous .icon {
+    @extend .fa-chevron-circle-up;
+}
+
+#app-stylus.view-successive #navitem-previous .icon {
+    @extend .fa-chevron-circle-left;
+}
+
+#navitem-next {
+    @extend .show-for-medium-up;
+    //
+    a.disabled {
+        color: #555555;
+    }
+}
+
+#navitem-next .icon {
+    @extend .fa-chevron-circle-down;
+}
+
+#app-stylus.view-successive #navitem-next .icon {
+    @extend .fa-chevron-circle-right;
+}
+
+#navitem-contents-menu {
+    width: 220px;
+    max-height: 380px;
+    overflow: auto;
+}
+
+#navitem-contents-menu .jspTrack {
+    background: #494646;
+    position: relative;
+}
+
+#navitem-contents-menu .jspDrag {
+    background: $topbar-drag-color;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+#navitem-contents-menu .jspPane ul li {
+    white-space: normal; //
+    a {
+        white-space: normal;
+    }
+}
+
+.pagenav {
+    bottom: 0;
+    font-size: 36px;
+    padding: 10px 5px;
+    position: fixed;
+}
+
+.pagenav.a-right {
+    right: 0;
+}
+
+.pagenav a {
+    color: #333333;
+    text-decoration: none;
+    opacity: 0;
+}
+
+.pagenav a .icon-link {
+    @extend .fa-stack;
+}
+
+.pagenav a .icon-base {
+    @extend .fa;
+    @extend .fa-circle;
+    @extend .fa-stack-2x;
+}
+
+.pagenav .icon {
+    @extend .fa;
+    @extend .fa-stack-1x;
+    @extend .fa-inverse;
+}
+
+#pagitem-align a .icon-link .icon {
+    @extend .fa-exchange;
+}
+
+#pagitem-options a .icon-link .icon {
+    @extend .fa-user;
+    margin-left: 0;
+}
+
+#pagitem-contents a .icon-link .icon {
+    @extend .fa-bars;
+    margin-left: 0;
+}
+
+#pagitem-previous a .icon-link .icon {
+    @extend .fa-angle-up;
+    margin-left: 0;
+    margin-top: -2px;
+}
+
+#app-stylus.view-successive #pagitem-previous a .icon-link .icon {
+    @extend .fa-angle-left;
+    margin-left: -2px;
+    margin-top: 0;
+}
+
+#pagitem-next a .icon-link .icon {
+    @extend .fa-angle-down;
+    margin-left: 0;
+    margin-top: 2px;
+}
+
+#app-stylus.view-successive #pagitem-next a .icon-link .icon {
+    @extend .fa-angle-right;
+    margin-left: 3px;
+    margin-top: 0;
+}
+
+.top-bar ul.title-area li > h1 > a:focus, .top-bar ul.title-area li > h1 > a:hover {
+    background-color: $topbar-link-bg-hover;
+}

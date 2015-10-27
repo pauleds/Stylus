@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>MediaElement Playlist Plugin for Video and Audio Tag</title>
+
+		<!-- jQuery and MediaElement.js -->
+		<script type="text/javascript" src="_demo/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="_demo/mediaelement-and-player.js"></script>
+		<link type="text/css" rel="stylesheet" href="_demo/mediaelementplayer.css">
+
+		<!-- MediaElement Playlist Plugin -->
+		<script type="text/javascript" src="_demo/mediaelement-playlist-plugin.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="_demo/mediaelement-playlist-plugin.min.css">
+
+		<style>
+			/* these are totally optional */
+
+			/* hides focus marker around control buttons */
+			.mejs-controls .mejs-button button:focus {
+				outline: none;
+			}
+
+			/* replace svg with our png - chrome 36 has issues with bg position and svg (play arrow invisible) */
+			.mejs-overlay-button {
+				background-image: url(./bigplay.png);
+			}
+
+			/* makes loader bg transparent, not black, we also supply a different loading gif in _demo/ */
+			.mejs-overlay-loading {
+				background: none;
+			}
+
+		</style>
+	</head>
+
+	<body>
+
+		<h1>MediaElement.js Playlist Plugin for the Video and Audio Tag</h1>
+		<p>
+			This MediaElement.js plugin provides playlist support for Video and Audio players.<br>
+			It was forked from <a href="https://github.com/duozersk/mep-feature-playlist">duozersk/mep-feature-playlist</a>, which is a fork of <a href="https://github.com/JeyKeu/mep-feature-playlist">JeyKeu/mep-feature-playlist</a>.
+		</p>
+
+		<h2>How it works</h2>
+		<ol>
+			<li>Add a CSS class "mep-playlist" to your &lt;video&gt; or &lt;audio&gt; tag</li>
+			<li>Add an attribute "data-showplaylist" with value "true" to show playlist on start</li>
+			<li>Add features "playlistfeature" (loads library) and "playlist" (shows control icon)</li>
+			<li>Add several &lt;source&gt;s to your &lt;video&gt; or &lt;audio&gt; tags (only playable types will be playlisted)</li>
+		</ol>
+
+		<h2>Main features</h2>
+		<ul>
+			<li>Regular playlist or slider display</li>
+			<li>Playlists are customizable via CSS/Sass</li>
+			<li>Grunt, Sass, JSHinted source</li>
+		</ul>
+
+		<h2>Build it yourself and contribute</h2>
+		<ul>
+			<li>make sure you "npm install" before you run "grunt", sass is required too ("$ gem install sass")</li>
+			<li>"$ grunt build:dev" stores a debuggable demo in _dev/</li>
+			<li>"$ grunt build" stores a minified demo in _build/</li>
+			<li>have a look at the demo.html files in either folder</li>
+			<li>run "$ grunt watch" or just "$ grunt" to work efficiently</li>
+		</ul>
+
+		<!-- 
+		reminder: video tag standard attribute values: 
+		- preload:  "", "none", "metadata", "auto"
+		- loop:     "", "loop"
+		- autoplay: "", "autoplay"
+		- controls: "", "controls"
+
+		mep additional attribute values:
+		- data-showplaylist: "", "true" (shows playlist initially or not if empty or "false")
+		-->
+
+		<h2>Video playlist with default display</h2>
+		<video 
+			class="mep-playlist" 
+			data-showplaylist="true" 
+
+			width="530" 
+			height="300" 
+			poster="https://creativecommons.org/images/features/mayerandbettle.jpg" 
+			controls="controls" 
+			preload="auto" 
+			loop=""
+			>
+			<!-- Mayer and Bettle by Creative Commons Australia -->
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/MayerandBettle_480p.webm" type="video/webm"      title="Mayer and Bettle by Creative Commons Australia" data-poster="https://creativecommons.org/images/features/mayerandbettle.jpg">
+			<source src="http://blip.tv/file/get/Commonscreative-MayerAndBettle980.ogv"                 type="video/ogg"       title="Mayer and Bettle by Creative Commons Australia" data-poster="https://creativecommons.org/images/features/mayerandbettle.jpg">
+			<source src="http://blip.tv/file/get/Commonscreative-MayerAndBettle715.mov"                 type="video/quicktime" title="Mayer and Bettle by Creative Commons Australia" data-poster="https://creativecommons.org/images/features/mayerandbettle.jpg">
+
+			<!-- Wanna Work Together? by Creative Commons -->
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/WannaWorkTogether_480p.webm" type="video/webm"      title="Wanna Work Together? by Creative Commons" data-poster="https://creativecommons.org/images/features/wannawork.png">
+			<source src="http://blip.tv/file/get/Commonscreative-WannaWorkTogether315.ogv"                 type="video/ogg"       title="Wanna Work Together? by Creative Commons" data-poster="https://creativecommons.org/images/features/wannawork.png">
+			<source src="http://blip.tv/file/get/Commonscreative-WannaWorkTogether958.mov"                 type="video/quicktime" title="Wanna Work Together? by Creative Commons" data-poster="https://creativecommons.org/images/features/wannawork.png">
+
+			<!-- Reticulum Rex by Creative Commons -->
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/ReticulumRex_240p.webm" type="video/webm"    title="Reticulum Rex by Creative Commons" data-poster="https://creativecommons.org/images/features/reticulumrex.gif">
+			<source src="http://blip.tv/file/get/Commonscreative-ReticulumRex691.ogv" type="video/ogg"                     title="Reticulum Rex by Creative Commons" data-poster="https://creativecommons.org/images/features/reticulumrex.gif">
+			<source src="http://blip.tv/file/get/Commonscreative-ReticulumRex518.mpeg" type="video/mpeg"                   title="Reticulum Rex by Creative Commons" data-poster="https://creativecommons.org/images/features/reticulumrex.gif">
+
+			<!-- Wired NextMusic by Creative Commons -->
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/WiredNextMusic_360p.webm" type="video/webm" title="Wired NextMusic by Creative Commons" data-poster="https://creativecommons.org/images/features/wired_nextmusic.jpg">
+			<source src="http://blip.tv/file/get/Commonscreative-WiredNextMusic952.ogv" type="video/ogg"                  title="Wired NextMusic by Creative Commons" data-poster="https://creativecommons.org/images/features/wired_nextmusic.jpg">
+			<source src="http://blip.tv/file/get/Commonscreative-WiredNextMusic423.mov" type="video/quicktime"            title="Wired NextMusic by Creative Commons" data-poster="https://creativecommons.org/images/features/wired_nextmusic.jpg">
+
+			<!-- image fallback only - flash version does not support playlists -->
+			<img src="./no-video-playlist.png" width="530" title="No video playlist capabilities. Please upgrade your browser!">
+		</video>
+
+		<h2>Video playlist with slider</h2>
+		<video 
+			class="mep-playlist mep-slider" 
+			data-showplaylist="true" 
+
+			width="530" 
+			height="300" 
+			poster="https://creativecommons.org/images/features/mayerandbettle.jpg" 
+			controls="controls" 
+			preload="auto" 
+			loop=""
+			>
+
+			<!-- Mayer and Bettle by Creative Commons Australia -->
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/MayerandBettle_480p.webm" type="video/webm"      title="Mayer and Bettle by Creative Commons Australia" data-poster="https://creativecommons.org/images/features/mayerandbettle.jpg">
+			<source src="http://blip.tv/file/get/Commonscreative-MayerAndBettle980.ogv"                 type="video/ogg"       title="Mayer and Bettle by Creative Commons Australia" data-poster="https://creativecommons.org/images/features/mayerandbettle.jpg">
+			<source src="http://blip.tv/file/get/Commonscreative-MayerAndBettle715.mov"                 type="video/quicktime" title="Mayer and Bettle by Creative Commons Australia" data-poster="https://creativecommons.org/images/features/mayerandbettle.jpg">
+
+			<!-- Wanna Work Together? by Creative Commons -->
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/WannaWorkTogether_480p.webm" type="video/webm"      title="Wanna Work Together? by Creative Commons" data-poster="https://creativecommons.org/images/features/wannawork.png">
+			<source src="http://blip.tv/file/get/Commonscreative-WannaWorkTogether315.ogv"                 type="video/ogg"       title="Wanna Work Together? by Creative Commons" data-poster="https://creativecommons.org/images/features/wannawork.png">
+			<source src="http://blip.tv/file/get/Commonscreative-WannaWorkTogether958.mov"                 type="video/quicktime" title="Wanna Work Together? by Creative Commons" data-poster="https://creativecommons.org/images/features/wannawork.png">
+
+			<!-- Reticulum Rex by Creative Commons -->
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/ReticulumRex_240p.webm" type="video/webm"    title="Reticulum Rex by Creative Commons" data-poster="https://creativecommons.org/images/features/reticulumrex.gif">
+			<source src="http://blip.tv/file/get/Commonscreative-ReticulumRex691.ogv" type="video/ogg"                     title="Reticulum Rex by Creative Commons" data-poster="https://creativecommons.org/images/features/reticulumrex.gif">
+			<source src="http://blip.tv/file/get/Commonscreative-ReticulumRex518.mpeg" type="video/mpeg"                   title="Reticulum Rex by Creative Commons" data-poster="https://creativecommons.org/images/features/reticulumrex.gif">
+
+			<!-- Wired NextMusic by Creative Commons -->
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/WiredNextMusic_360p.webm" type="video/webm" title="Wired NextMusic by Creative Commons" data-poster="https://creativecommons.org/images/features/wired_nextmusic.jpg">
+			<source src="http://blip.tv/file/get/Commonscreative-WiredNextMusic952.ogv" type="video/ogg"                  title="Wired NextMusic by Creative Commons" data-poster="https://creativecommons.org/images/features/wired_nextmusic.jpg">
+			<source src="http://blip.tv/file/get/Commonscreative-WiredNextMusic423.mov" type="video/quicktime"            title="Wired NextMusic by Creative Commons" data-poster="https://creativecommons.org/images/features/wired_nextmusic.jpg">
+
+			<!-- image fallback only - flash version does not support playlists -->
+			<img src="./no-video-playlist.png" width="530" title="No video playlist capabilities. Please upgrade your browser!">
+		</video>
+		<p>
+			<ul>
+				<li><a href="https://creativecommons.org/videos/mayer-and-bettle">Mayer and Bettle</a> by Creative Commons Australia and <a href="http://blackbrow.com/">Black Brow</a> under <a href="http://creativecommons.org/licenses/by-sa/2.0/au/"><img alt="CC license" src="http://i.creativecommons.org/l/by-sa/2.0/au/88x31.png" width="88" height="31"></a></li>
+				<li><a href="https://creativecommons.org/videos/wanna-work-together">Wanna Work Together?</a> by Creative Commons under <a href="http://creativecommons.org/licenses/by/2.5/"><img alt="CC license" src="http://i.creativecommons.org/l/by/2.5/88x31.png" width="88" height="31"></a></li>
+				<li><a href="https://creativecommons.org/videos/reticulum-rex">Reticulum Rex</a> by Creative Commons under <a href="http://creativecommons.org/licenses/by-sa/1.0/"><img alt="CC license" src="http://i.creativecommons.org/l/by-sa/1.0/88x31.png" width="88" height="31"></a></li>
+				<li><a href="https://creativecommons.org/videos/wired-nextmusic">Wired NextMusic</a> by Creative Commons under <a href="http://creativecommons.org/licenses/by/3.0/"><img alt="CC license" src="http://i.creativecommons.org/l/by/3.0/88x31.png" width="88" height="31"></a></li>
+			</ul>
+		</p>
+
+
+		<h2>Regular Video</h2>
+		<p>
+			Regular videos use the same visuals as playlists. Customizable via CSS.
+		</p>
+		<video 
+			width="530" 
+			height="300" 
+			poster="https://creativecommons.org/images/features/past.jpg" 
+			controls="controls" 
+			preload="auto" 
+			loop="loop"
+			>
+
+			<source src="http://mirrors.creativecommons.org/movingimages/webm/BuildingonthePast_480p.webm" type="video/webm">
+			<source src="http://blip.tv/file/get/Commonscreative-BuildingOnThePast517.ogv" type="video/ogg">
+			<source src="http://blip.tv/file/get/Commonscreative-BuildingOnThePast896.mov" type="video/mp4">
+
+			<!-- flash fallback for non-HTML5 browsers without JavaScript -->
+			<object 
+				width="100%" 
+				type="application/x-shockwave-flash" 
+				data="/flashmediaelement.swf" 
+				>
+				<param name="movie" value="/flashmediaelement.swf">
+				<param name="flashvars" value="controls=true&autoplay=true&loop=true&file=video/video2.mp4">
+
+				<!-- image fallback -->
+				<img src="https://creativecommons.org/images/features/past.jpg" width="320" title="No video playback capabilities">
+			</object>
+		</video>
+		<p>
+			<a href="https://creativecommons.org/videos/building-on-the-past">Video</a> by <a href="http://justincone.com/">Justin Cone</a> under <a href="http://creativecommons.org/licenses/by/3.0/"><img alt="CC license" src="http://i.creativecommons.org/l/by/3.0/88x31.png" width="88" height="31"></a>
+		</p>
+
+
+		<h2>Audio playlist</h2>
+		<audio 
+			class="mep-playlist" 
+			data-showplaylist="true" 
+
+			width="400" 
+			height="220" 
+			controls="controls" 
+			preload="auto"
+			>
+
+			<source src="http://sampleswap.org/mp3/artist/harvestfred/harvestfred_-PRIMAVARA--320.mp3"         title="PRIMAVARA by harvestfred"                           data-poster="http://dummyimage.com/600x400/574c0d/e0e0e0&text=PRIMAVARA+by+harvestfred" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/fadortel/life-in-a-box_kalamata3-320.mp3"            title="kalamata_3 by life in a box"                        data-poster="http://dummyimage.com/600x400/801a80/e0e0e0&text=kalamata_3 by life in a box" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/robbot/robert-meyers_The-Magnificient-Escap-320.mp3" title="The Magnificient Escape 2009 EDIT by robert meyers" data-poster="http://dummyimage.com/600x400/80601b/e0e0e0&text=The+Magnificient+Escape+2009+EDIT+by+robert+meyers" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/brettml/Seed-AI_2D-320.mp3"                          title="2D by Seed A.I."                                    data-poster="http://dummyimage.com/600x400/1c1c80/e0e0e0&text=2D+by+Seed+A.I." type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/Thrystero/Thrystero_Diagonal-320.mp3"                title="Diagonal by Thrystero"                              data-poster="http://dummyimage.com/600x400/741c80/e0e0e0&text=Diagonal+by+Thrystero" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/Akcija/Akcija_Trip-To-Your-Liver-320.mp3"            title="Trip To Your Liver by Akcija"                       data-poster="http://dummyimage.com/600x400/1c8028/e0e0e0&text=Trip+To+Your+Liver+by+Akcija" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/PaGaN/Alans-Lounge_No-More-Ballyhoo-320.mp3"         title="No More Ballyhoo by Alans Lounge"                   data-poster="http://dummyimage.com/600x400/27570d/e0e0e0&text=o+More+Ballyhoo+by+Alans+Lounge" type="audio/mpeg">
+
+		</audio>
+
+		<h2>Audio playlist with slider</h2>
+		<audio 
+			class="mep-playlist mep-slider" 
+			data-showplaylist="true" 
+
+			width="400" 
+			height="260" 
+			controls="controls" 
+			preload="none"
+			>
+
+			<source src="http://sampleswap.org/mp3/artist/harvestfred/harvestfred_-PRIMAVARA--320.mp3"         title="PRIMAVARA by harvestfred"                           data-poster="http://dummyimage.com/600x400/574c0d/e0e0e0&text=PRIMAVARA+by+harvestfred" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/fadortel/life-in-a-box_kalamata3-320.mp3"            title="kalamata_3 by life in a box"                        data-poster="http://dummyimage.com/600x400/801a80/e0e0e0&text=kalamata_3 by life in a box" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/robbot/robert-meyers_The-Magnificient-Escap-320.mp3" title="The Magnificient Escape 2009 EDIT by robert meyers" data-poster="http://dummyimage.com/600x400/80601b/e0e0e0&text=The+Magnificient+Escape+2009+EDIT+by+robert+meyers" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/brettml/Seed-AI_2D-320.mp3"                          title="2D by Seed A.I."                                    data-poster="http://dummyimage.com/600x400/1c1c80/e0e0e0&text=2D+by+Seed+A.I." type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/Thrystero/Thrystero_Diagonal-320.mp3"                title="Diagonal by Thrystero"                              data-poster="http://dummyimage.com/600x400/741c80/e0e0e0&text=Diagonal+by+Thrystero" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/Akcija/Akcija_Trip-To-Your-Liver-320.mp3"            title="Trip To Your Liver by Akcija"                       data-poster="http://dummyimage.com/600x400/1c8028/e0e0e0&text=Trip+To+Your+Liver+by+Akcija" type="audio/mpeg">
+			<source src="http://sampleswap.org/mp3/artist/PaGaN/Alans-Lounge_No-More-Ballyhoo-320.mp3"         title="No More Ballyhoo by Alans Lounge"                   data-poster="http://dummyimage.com/600x400/27570d/e0e0e0&text=o+More+Ballyhoo+by+Alans+Lounge" type="audio/mpeg">
+
+		</audio>
+		<p>
+			<a href="http://sampleswap.org/mp3/creative-commons/free-music.php">Music from sampleswap.org</a> under <a href="http://creativecommons.org/licenses/">various CC licenses</a>
+		</p>
+
+		<script>
+			$(function () {
+
+				// both video playlists(regular and slider)
+				$('video.mep-playlist').mediaelementplayer({
+					"features": ['playlistfeature', 'prevtrack', 'playpause', 'nexttrack', 'loop', 'shuffle', 'current', 'progress', 'duration', 'volume', 'playlist', 'fullscreen'],
+					"shuffle": false,
+					"loop": false
+				});
+
+				// audio playlist
+				$('audio.mep-playlist').mediaelementplayer({
+					"features": ['playlistfeature', 'prevtrack', 'playpause', 'nexttrack', 'loop', 'shuffle', 'current', 'progress', 'duration', 'volume', 'playlist'],
+					"audioVolume": "vertical", // just like video player
+					"shuffle": false,
+					"loop": false
+				});
+
+				// regular video
+				$('video:not(.mep-playlist)').mediaelementplayer({
+					"features": ['playpause', 'current', 'progress', 'duration', 'tracks', 'volume', 'fullscreen'],
+				});
+
+			});
+		</script>
+
+		<footer>
+			<a href="https://github.com/rocco/mediaelement-playlist-plugin/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+		</footer>
+
+	</body>
+</html>

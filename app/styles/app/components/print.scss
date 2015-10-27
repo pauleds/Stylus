@@ -1,0 +1,154 @@
+@import '../_variables';
+
+@media print {
+
+    body {
+        padding: 0 !important;
+    }
+
+    .align-left {
+        display: block;
+        float: left;
+        overflow: auto;
+        margin: 0 20px 20px 0;
+    }
+
+    .align-center {
+        display: block;
+        margin: 20px auto;
+        clear: both;
+    }
+
+    .align-right {
+        display: block;
+        float: right;
+        overflow: auto;
+        margin: 0 0 20px 20px;
+    }
+
+    #document-pages {
+        .footer {
+            display: block;
+        }
+    }
+
+    #app-header, #app-footer, .stylus-modal {
+        display: none !important;
+    }
+
+    #app-main, body.stylus-plain {
+        font-size: 0.8em !important;
+        background-color: #ffffff !important;
+        color: inherit !important; //
+        //
+        h1, h2, h3, h4, h5, h6 {
+            color: inherit !important;
+        }
+
+        div.view-enhanced-content {
+            display: none !important;
+        }
+
+        div.view-simple-content, #document-info {
+            display: block !important;
+        }
+
+        hr {
+            border-color: #000000;
+        }
+
+        a {
+            color: #000000;
+        }
+
+        blockquote {
+            border-style: none;
+        }
+
+        blockquote, blockquote p {
+            color: #000000 !important;
+        }
+
+        button, .button {
+            background: inherit !important;
+            border-color: #000000 !important;
+            color: #000000 !important;
+        }
+
+        .accordion .accordion-navigation > a, .accordion dd > a, .tabs .tab-title > a, .tabs dd > a {
+            background: inherit !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
+        }
+
+        .accordion .accordion-navigation.active > a, .accordion dd.active > a, .tabs .tab-title.active > a, .tabs dd.active > a {
+            color: inherit !important;
+        }
+
+        .accordion .accordion-navigation.active > a, .accordion dd.active > a, .tabs .tab-title.active > a, .tabs dd.active > a {
+            background-color: #000000 !important;
+            border-color: #000000 !important;
+        }
+
+        .accordion .accordion-navigation > .content, .accordion dd > .content, .tabs-content > .content, .reveal-modal, .panel-body {
+            background-color: inherit !important;
+            border-color: #000000 !important;
+        }
+
+        .panel span.fa {
+            color: #000000 !important;
+        }
+
+        .panel-heading span.fa {
+            color: inherit !important;
+        }
+
+        .panel-heading {
+            background-color: #000000;
+            border-color: #000000 !important;
+            color: inherit !important;
+        }
+
+        .panel-title {
+            color: inherit !important;
+        }
+
+        .panel-primary {
+            border-color: #000000;
+        }
+
+        .reveal-modal {
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+        }
+
+        #document-info > .inner, .page > .inner {
+            border-color: #000000 !important;
+        }
+
+        .close-reveal-modal {
+            color: #000000 !important;
+        }
+
+        .wfs-direction-nav a {
+            color: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .wfs-direction-nav a:before {
+            color: rgba(255, 255, 255, 0.5 ) !important;
+        }
+
+        .wfs-control-paging li a {
+            background: #000000;
+            background: rgba(255, 255, 0, 0.2);
+        }
+
+        .wfs-control-paging li a.wfs-active {
+            background: #000000;
+        }
+
+        .wfs-caption {
+            background-color: #000000 !important;
+            color: inherit !important;
+        }
+    }
+}

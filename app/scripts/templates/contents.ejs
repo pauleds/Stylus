@@ -1,0 +1,7 @@
+<ul class="navitem-contents-menu-items my-template">
+  <% pages.each( function( page ) { %>
+  <li class="link-page-<%= page.getNumber() %>">
+    <a href="#/page/<%= page.getNumber() %>"> <%= page.getNumber() %>: <%= page.getTitle() %> </a>
+  </li>
+  <% } ) %>
+</ul>

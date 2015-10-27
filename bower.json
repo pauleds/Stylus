@@ -1,0 +1,33 @@
+{
+  "name": "stylus-ce",
+  "version": "2.2.0",
+  "main": [ ],
+  "ignore": [ ],
+  "dependencies": {
+    "almond": "~0.3.0",
+    "backbone": "~1.2.0",
+    "bootstrap-sass": "~3.3.0",
+    "flexslider": "~2.5.0",
+    "font-awesome": "~4.4.0",
+    "foundation": "~5.5.0",
+    "hammerjs": "~2.0.0",
+    "jquery": "~2.1.0",
+    "jquery.cookie": "~1.4.0",
+    "jquery-hoverIntent-jmalonzo": "0.7.0",
+    "jquery.jscrollpane": "~2.0.0",
+    "jquery-mousewheel": "~3.1.0",
+    "layoutmanager": "~0.9.0",
+    "modernizr": "~2.8.0",
+    "mediaelement": "~2.18.0",
+    "requirejs": "~2.1.0",
+    "requirejs-text": "~2.0.0",
+    "underscore": "~1.8.0",
+    "waypoints": "~3.1.0"
+  },
+  "devDependencies": { },
+  "private": true,
+  "resolutions": {
+    "backbone": "~1.2.0",
+    "jquery": "~2.1.0"
+  }
+}

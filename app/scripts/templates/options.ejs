@@ -1,0 +1,138 @@
+<div id="options-menu" class="reveal-modal stylus-modal" data-reveal aria-labelledby="options-menu-title" aria-hidden="true" role="dialog">
+
+  <h2 id="options-menu-title"><span class="fa fa-user" style="margin-right: 10px;"></span> Options </h2>
+
+  <div class="row">
+
+    <div class="columns large-5 medium-12">
+
+      <h3> Page view </h3>
+
+      <div class="button-bar">
+        <ul class="button-group radius">
+          <li>
+            <a id="page-view-successive" class="small button active"
+            title="View pages on a singular, successive, page-by-page basis">
+              <span class="fa fa-arrows-h"> </span> Successive
+            </a></li>
+          <li>
+            <a id="page-view-continuous" class="small button"
+            title="View pages as one, long, continuous document">
+              <span class="fa fa-arrows-v"> </span> Continuous
+            </a></li>
+        </ul>
+      </div>
+
+      <div class="button-bar">
+        <ul class="button-group radius">
+          <li>
+            <a id="page-view-enhanced" class="small button active"
+            title="View pages with enhanced widgets">
+              <span class="fa fa-bell"> </span> Enhanced
+            </a></li>
+          <li>
+            <a id="page-view-simple" class="small button"
+            title="View pages with simplified widgets">
+              <span class="fa fa-bell-slash"> </span> Simple
+            </a></li>
+        </ul>
+      </div>
+
+      <p>
+        <a id="page-view-duplicate" class="button small radius"
+        title="Duplicate the document in a new window">
+          <span class="fa fa-clone"> </span> Duplicate
+        </a>
+        <a id="page-view-reload" class="button small radius"
+        title="Reload the document in the current window">
+          <span class="fa fa-refresh"> </span> Reload
+        </a></p>
+
+      <p>
+        <a id="page-view-plain" class="button small radius"
+        title="Open a plain, simplified version of the document in a new window">
+          <span class="fa fa-file-o"> </span> Plain
+        </a>
+        <a id="page-view-print" class="button small radius"
+        title="Print a hard copy of the document">
+          <span class="fa fa-print"> </span> Print
+        </a></p>
+
+      <div class="show-for-large-up">
+        <h3> Help </h3>
+        <p>
+          <a role="button" class="button small radius" data-reveal-id="about-menu"
+          title="Learn more about Stylus">
+            <span class="fa fa-info-circle"> </span> About Stylus
+          </a></p>
+      </div>
+
+    </div>
+
+    <div class="columns large-7 medium-12">
+
+      <h3> Text view </h3>
+
+      <div id="text-contrast">
+        <p>
+          <a role="button" class="button small radius" title="Black on white">
+            <span class="contrast-black-on-white"> A </span>
+          </a>
+          <a role="button" class="button small radius" title="Black on yellow">
+            <span class="contrast-black-on-yellow"> A </span>
+          </a>
+          <a role="button" class="button small radius" title="Yellow on black">
+            <span class="contrast-yellow-on-black"> A </span>
+          </a>
+          <a role="button" class="button small radius" title="Black on cream">
+            <span class="contrast-black-on-cream"> A </span>
+          </a>
+          <a role="button" class="button small radius" title="Black on pink">
+            <span class="contrast-black-on-pink"> A </span>
+          </a>
+          <a role="button" class="button small radius" title="Black on blue">
+            <span class="contrast-black-on-blue"> A </span>
+          </a></p>
+      </div>
+
+      <div id="text-size-sample">
+        <div>
+          <p> Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra massa congue faucibus venenatis. In iaculis odio et ex ultricies convallis. Suspendisse malesuada rhoncus risus, non ultrices lorem venenatis ultrices. Fusce venenatis dui nec elit facilisis, vel commodo diam facilisis. Nam eget turpis lectus. Quisque at cursus libero, eu pharetra nisl. Proin vel libero eros. </p>
+        </div>
+      </div>
+
+      <div id="text-size-slider" class="range-slider radius" data-slider="<%= textSize %>" data-options="step: <%= textSizeStep %>; start: <%= textSizeMin %>; end: <%= textSizeMax %>;">
+        <span class="range-slider-handle" role="slider" tabindex="0"></span>
+        <span class="range-slider-active-segment"></span>
+        <input type="hidden">
+      </div>
+
+      <p>
+        <a id="text-size-reset" role="button" class="button small radius" title="Reset text size">
+          <span class="fa fa-search"> </span> Reset
+        </a>
+        <a id="text-size-increase" role="button" class="button small radius" title="Increase text size">
+          <span class="fa fa-search-plus"> </span> </span> Increase
+        </a>
+        <a id="text-size-decrease" role="button" class="button small radius" title="Decrease text size">
+          <span class="fa fa-search-minus"> </span> Decrease
+        </a></p>
+
+      <div class="hide-for-large-up">
+        <h3> Help </h3>
+        <p>
+          <a role="button" class="button small radius" data-reveal-id="about-menu"
+          title="Learn more about Stylus">
+            <span class="fa fa-info-circle"> </span> About Stylus
+          </a></p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <a aria-label="Close" class="close-reveal-modal">
+    ×
+  </a>
+
+</div>

@@ -1,0 +1,32 @@
+<div id="<%= widget.id %>">
+
+  <div class="view-enhanced-content" aria-hidden="true">
+
+    <%
+    var height = ( widget.getHeight() ) ? widget.getHeight() + 'px' : '100%';
+    var playlist = widget.getPlaylist();
+    var isMultiple = ( playlist.length > 1 );
+    var attrs = ( isMultiple ) ? ' class="widget-body mep-playlist" data-showplaylist="true"': ' class="widget-body"';
+    %>
+
+    <div class="media-content" style="max-height:<%= height %>;">
+
+      <audio id="<%= widget.id %>-audio" <%=attrs%> width="100%" height="100%">
+
+        <% _.each( playlist, function( item ){  %>
+
+        <source type="audio/mp3" title="<%= item.title %>" src="<%= widget.getPath() %><%= item.file %>.mp3" />
+
+        <% }, this) %>
+
+      </audio>
+
+    </div>
+
+  </div>
+
+  <div class="view-simple-content">
+    <%= widget.getSimpleContent() %>
+  </div>
+
+</div>

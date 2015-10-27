@@ -1,0 +1,48 @@
+@import '../_variables';
+@import '../_mixins';
+
+.accordion .accordion-navigation > a, .accordion dd > a {
+    background: $primary-gradient-top;
+    @include background-image(linear-gradient($primary-gradient-top, $primary-gradient-bottom));
+    border-color: $primary-grey-dark !important;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    color: $primary-grey-darkest;
+    font-family: $paragraph-font-family;
+    font-size: inherit !important;
+    overflow: auto;
+}
+
+.accordion .accordion-navigation > a.icon-fa, .accordion dd > a.icon-fa {
+    padding: 0.5em 1em !important;
+}
+
+.accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
+    background: $primary-gradient-top-hover;
+    @include background-image(linear-gradient($primary-gradient-top-hover, $primary-gradient-bottom-hover));
+    text-decoration: none !important;
+    border-color: $primary-color !important;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    color: #ffffff;
+}
+
+.accordion .accordion-navigation:last-child > a, .accordion dd:last-child > a, .accordion .accordion-navigation:last-child > a:hover, .accordion dd:last-child > a:hover {
+    border-width: 1px !important;
+}
+
+.accordion .accordion-navigation.active > a, .accordion dd.active > a {
+    background: $primary-color-light;
+    border: 1px solid $primary-color !important;
+    color: #ffffff;
+}
+
+.accordion .accordion-navigation > .content, .accordion dd > .content {
+    border: 1px solid $primary-color;
+    border-top: none;
+    overflow: auto;
+}
+
+ul.accordion {
+    margin-left: 0;
+}

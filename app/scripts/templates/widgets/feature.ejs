@@ -1,0 +1,65 @@
+<div id="<%= widget.id %>">
+
+  <%
+  var icon = widget.getIcon();
+  var alignIcon = '';
+  if ( icon ) {
+  if ( widget.isIconLeft() ) {
+  alignIcon = ' left';
+  } else {
+  alignIcon = ' right';
+  }
+  }
+  %>
+
+  <% if ( 'well' === widget.getFeatureType() ) { %>
+
+  <div class="well">
+
+    <% if ( widget.getTitle() ) { %>
+
+    <% if ( icon ) { %> <span class="fa fa-<%= icon %> fa-2x <%= alignIcon %>"></span> <% } %>
+
+    <h3> <%= widget.getTitle() %> </h3>
+
+    <% } else { %>
+
+    <% if ( icon ) { %> <span class="fa fa-<%= icon %> fa-2x <%= alignIcon %>"></span> <% } %>
+
+    <% }  %>
+
+    <div>
+      <%= widget.getContent() %>
+    </div>
+
+  </div>
+
+  <% } else { %>
+
+  <div class="panel panel-primary">
+
+    <% if ( widget.getTitle() ) { %>
+
+    <div class="panel-heading">
+
+      <% if ( icon ) { %> <span class="fa fa-<%= icon %> fa-2x <%= alignIcon %>"></span> <% } %>
+
+      <h3 class="panel-title"> <%= widget.getTitle() %> </h3>
+
+    </div>
+
+    <% } else { %>
+
+    <% if ( icon ) { %> <span class="fa fa-<%= icon %> fa-2x <%= alignIcon %>"></span> <% } %>
+
+    <% }  %>
+
+    <div class="panel-body">
+      <%= widget.getContent() %>
+    </div>
+
+  </div>
+
+  <% }  %>
+
+</div>

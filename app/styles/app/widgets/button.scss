@@ -1,0 +1,11 @@
+@import '../_variables';
+
+.widget-button {
+    clear: none !important;
+    float: left;
+    margin-right: 10px;
+}
+
+.widget-button .widget-body {
+    margin-bottom: 0;
+}

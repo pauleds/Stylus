@@ -1,0 +1,37 @@
+@import '../_variables';
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.hidden {
+    @extend .hidden-for-small-only;
+    @extend .hidden-for-medium-up;
+}
+
+.text-align-left {
+    @extend .text-left;
+}
+
+.text-align-center {
+    @extend .text-center;
+}
+
+.text-align-right {
+    @extend .text-right;
+}
+
+.text-align-justify {
+    @extend .text-justify;
+}
+
+.align-left, .align-center, .align-right {
+    clear: both;
+    display: block;
+    float: none;
+    margin: 20px auto;
+}

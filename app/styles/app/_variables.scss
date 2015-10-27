@@ -1,0 +1,49 @@
+/*@import '../../bower_components/foundation/scss/foundation';*/
+
+@import '../../bower_components/foundation/scss/foundation/components/_global';
+@import '../../bower_components/foundation/scss/foundation/components/_top-bar';
+@import '../../bower_components/foundation/scss/foundation/components/_type';
+@import '../../bower_components/foundation/scss/foundation/components/_visibility';
+
+/* Colors */
+
+$primary-color: #279bad;
+$primary-color-lightest: scale-color($primary-color, $lightness: 50%) !default;
+$primary-color-lighter: scale-color($primary-color, $lightness: 30%) !default;
+$primary-color-light: scale-color($primary-color, $lightness: 10%) !default;
+$primary-color-dark: scale-color($primary-color, $lightness: -10%) !default;
+$primary-color-darker: scale-color($primary-color, $lightness: -20%) !default;
+$primary-color-darkest: scale-color($primary-color, $lightness: -30%) !default;
+
+$primary-grey: #edeaea; // #f9f9f9; //#dedfe5;
+$primary-grey-lightest: scale-color($primary-grey, $lightness: 70%) !default;
+$primary-grey-lighter: scale-color($primary-grey, $lightness: 30%) !default;
+$primary-grey-light: scale-color($primary-grey, $lightness: 10%) !default;
+$primary-grey-dark: scale-color($primary-grey, $lightness: -10%) !default;
+$primary-grey-darker: scale-color($primary-grey, $lightness: -20%) !default;
+$primary-grey-darkest: scale-color($primary-grey, $lightness: -35%) !default;
+
+$primary-gradient-top: $primary-grey-lightest;
+$primary-gradient-bottom: $primary-grey-light;
+
+$primary-gradient-top-hover: $primary-color-lightest;
+$primary-gradient-bottom-hover: $primary-color-light;
+
+/* Topbar */
+
+$topbar-font-color: #ffffff;
+$topbar-title-font-size: $topbar-link-font-size;
+$topbar-content-menu-active: $primary-color !default; //#ce2100 // #d6721b
+$topbar-content-menu-active-hover: scale-color($topbar-content-menu-active, $lightness: 5%) !default;
+$topbar-drag-color: scale-color($topbar-content-menu-active, $lightness: -15%) !default;
+
+/* Typography */
+
+$body-background-color: #f9f9f9;
+$header-color: $primary-color;
+$header-font-family: 'Roboto', $font-family-sans-serif;
+$paragraph-font-family: Tahoma, Geneva, $font-family-sans-serif;
+$list-font-family: $paragraph-font-family;
+
+$primary-radius: 10px;
+$secondary-radius: 5px;

@@ -1,0 +1,16 @@
+<a id="<%= widget.id %>" class="widget-body button" href="<%= widget.getLink() %>">
+
+  <%
+  var icon = widget.getIcon();
+  var isIconLeft = widget.isIconLeft();
+  var isIconRight = widget.isIconRight();
+  %>
+
+  <% if ( icon && isIconLeft ) { %> <span class="fa fa-<%= icon %>"></span>       <% } %>
+
+  <%= widget.getLabel() %>
+
+  <% if ( icon && isIconRight ) { %> <span class="fa fa-<%= icon %>"></span>       <% } %>
+
+</a>
+

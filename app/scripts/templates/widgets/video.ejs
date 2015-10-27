@@ -1,0 +1,33 @@
+<div id="<%= widget.id %>">
+
+  <div class="view-enhanced-content" aria-hidden="true">
+
+    <%
+    var width = ( widget.getWidth() ) ? widget.getWidth() + 'px' : '100%';
+    var playlist = widget.getPlaylist();
+    var isMultiple = ( playlist.length > 1 );
+    var attrs = ( isMultiple ) ? ' class="widget-body mep-playlist" data-showplaylist="true"': ' class="widget-body"';
+    %>
+
+    <div class="media-content" style="max-width:<%= width %>;">
+
+      <video id="<%= widget.id %>-video" <%=attrs%> width="100%" height="100%">
+
+        <% _.each( playlist, function( item ){  %>
+
+        <source type="video/mp4" title="<%= item.title %>" src="<%= widget.getPath() %><%= item.file %>.mp4" />
+
+        <% }, this) %>
+
+      </video>
+
+    </div>
+
+  </div>
+
+  <div class="view-simple-content">
+    <%= widget.getSimpleContent() %>
+  </div>
+
+</div>
+

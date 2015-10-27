@@ -1,0 +1,333 @@
+@import 'variables';
+@import 'mixins';
+
+/**
+ * 	Common
+ */
+
+@import 'components/common';
+
+/**
+ * Basic Typography
+ */
+
+body {
+    background-color: $body-background-color;
+    font-family: $paragraph-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $header-color;
+    font-family: $header-font-family;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+}
+
+h1 {
+    font-size: 2.4em;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+p {
+    font-family: $paragraph-font-family;
+    font-size: 1em;
+}
+
+ul, ol, dl {
+    font-family: $list-font-family;
+    font-size: 1em;
+}
+
+blockquote {
+    border-color: $header-color;
+}
+
+blockquote, blockquote p {
+    color: $header-color !important;
+}
+
+small {
+    font-size: 80%;
+}
+
+#document-header > .inner {
+    margin: 12px 0;
+}
+
+#document-header h1 {
+    margin-bottom: 0;
+}
+
+#document-footer > .inner {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#document-info > .inner, .page > .inner {
+    @extend .clearfix;
+    background-color: #ffffff;
+    border: 1px solid #dedfe5;
+    @include border-radius( $primary-radius );
+    margin-bottom: 30px;
+    padding: 18px;
+}
+
+body.stylus-plain {
+    #document-header {
+        margin: 20px 0;
+    }
+
+    .page {
+        @extend .clearfix;
+        background-color: #ffffff;
+        border: 1px solid #dedfe5;
+        @include border-radius( $primary-radius );
+        margin-bottom: 30px;
+        padding: 18px;
+    }
+}
+
+/**
+ * Structure
+ */
+
+html {
+    overflow-y: scroll;
+}
+
+#app-main {
+    @include grid-row;
+    padding: 0;
+}
+
+#document-header {
+    @include grid-column(12);
+}
+
+#document-footer {
+    @include grid-column(12);
+}
+
+#document-info {
+    @include grid-column(12);
+}
+
+#document-pages {
+    @include grid-column(12);
+}
+
+.reveal-modal {
+    border: none;
+    @include border-radius( $primary-radius );
+    padding: 1.4em;
+}
+
+.stylus-modal h2 {
+    font-size: 2em;
+}
+
+.reveal-modal button, .reveal-modal .button,
+{
+    font-size: 1em;
+}
+
+.fa {
+    margin-right: 5px;
+}
+
+.range-slider.radius .range-slider-handle {
+    background-color: $primary-gradient-top-hover;
+    @include background-image(linear-gradient($primary-gradient-top-hover, $primary-gradient-bottom-hover));
+    border-color: $primary-color !important;
+    border-style: solid;
+    border-width: 1px 1px 2px;
+}
+
+.range-slider.radius .range-slider-handle:hover {
+    background-color: $primary-gradient-top-hover;
+    @include background-image(linear-gradient($primary-gradient-top-hover, $primary-gradient-bottom-hover));
+}
+
+.button-group.radius > *:first-child .button, .button-group.radius > *:first-child button {
+    border-left: 1px solid;
+}
+
+.button-group.radius > * {
+    margin: 0 -4px;
+}
+
+.button, button {
+    background: $primary-gradient-top;
+    @include background-image(linear-gradient($primary-gradient-top, $primary-gradient-bottom));
+    border-color: $primary-grey-darker !important;
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    color: $primary-grey-darkest;
+    @include border-radius( $secondary-radius );
+    font-size: inherit !important;
+    padding: 15px;
+}
+
+.button:hover, button:hover {
+    background: $primary-gradient-top-hover;
+    @include background-image(linear-gradient($primary-gradient-top-hover, $primary-gradient-bottom-hover));
+    border-color: $primary-color-dark !important;
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    color: #ffffff;
+}
+
+.button.active, button.active {
+    background: $primary-color-lighter;
+    border-color: $primary-color !important;
+    color: #ffffff;
+}
+
+.inner {
+    overflow: auto;
+}
+
+/* Widgets */
+
+@import 'widgets/widget';
+@import 'widgets/accordion';
+@import 'widgets/button';
+@import 'widgets/feature';
+@import 'widgets/media';
+@import 'widgets/slider';
+@import 'widgets/tabs';
+
+/* */
+
+#document-pages {
+    .header, .content, .footer {
+        clear: both;
+    }
+
+    .footer {
+        display: none; //
+        .page-number {
+            float: right;
+        }
+    }
+}
+
+#options-menu p {
+    margin: 0 0 0 -4px;
+}
+
+#document-pages a .fa {
+    margin-left: 5px;
+}
+
+#document-pages .button .fa, #document-pages button .fa {
+    margin-right: 10px;
+}
+
+.reveal-modal .button.small, .reveal-modal button.small {
+    padding: 12px;
+}
+
+.stylus-modal h4 {
+    margin-bottom: 10px;
+}
+
+.reveal-modal .close-reveal-modal {
+    margin-right: 0;
+}
+
+#text-size-sample {
+    height: 200px;
+}
+
+#text-size-sample > div {
+    border: 1px solid #dddddd;
+    height: 200px;
+    overflow: auto;
+    padding: 10px;
+}
+
+a {
+    color: $primary-color;
+}
+
+#app-main a:not(.button):not(.control) {
+    text-decoration: underline;
+}
+
+#app-main a:not(.button):not(.control):hover {
+    text-decoration: none;
+}
+
+/* Components */
+
+body.stylus-plain div[class^="stylus-widget-"], body.stylus-plain div[class*=" stylus-widget-"] {
+    @extend .panel;
+    @extend .clearfix;
+    background-color: inherit !important;
+    border-color: $primary-grey-dark;
+    padding: 20px; //
+    div {
+        @extend .clearfix;
+    }
+
+    margin-bottom: 30px;
+}
+
+div.view-simple-content {
+    @extend .panel;
+    @extend .clearfix;
+    background-color: inherit !important;
+    border-color: $primary-grey-dark;
+    padding: 20px; //
+    div {
+        @extend .clearfix;
+    }
+}
+
+div.view-enhanced-content.active, div.view-simple-content.active {
+    display: block !important;
+}
+
+div.view-enhanced-content.inactive, div.view-simple-content.inactive {
+    display: none !important;
+}
+
+#document-info {
+    display: none !important;
+}
+
+@import 'components/navigation';
+@import 'components/print';
+
+/* Contrast */
+
+@import 'contrast/black-on-white';
+@import 'contrast/yellow-on-black';
+@import 'contrast/black-on-yellow';
+@import 'contrast/black-on-cream';
+@import 'contrast/black-on-pink';
+@import 'contrast/black-on-blue';
+
+/* Responsive */
+
+@import 'responsive/medium-up';

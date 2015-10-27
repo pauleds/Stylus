@@ -1,0 +1,16 @@
+.contrast-black-on-yellow {
+    @extend .contrast-black-on-white;
+    background-color: #ffff00 !important;
+
+    button, .button {
+        background: #ffff00;
+    }
+
+    .accordion .accordion-navigation > a, .accordion dd > a, .tabs .tab-title > a, .tabs dd > a {
+        background: #ffff00 !important;
+    }
+
+    .accordion .accordion-navigation > .content, .accordion dd > .content, .tabs-content > .content, .reveal-modal, .panel-body {
+        background-color: #ffff00 !important;
+    }
+}

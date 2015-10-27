@@ -1,0 +1,72 @@
+@import '../_variables';
+
+.heading-text {
+    line-height: 4em !important;
+}
+
+.heading-icon, .heading-icon img {
+    max-height: 64px;
+    max-width: 64px;
+}
+
+.heading-icon.icon-left {
+    margin-right: 10px;
+}
+
+.heading-icon.icon-right {
+    float: right;
+    margin-left: 1rem;
+}
+
+.heading-icon .fa {
+    vertical-align: middle;
+}
+
+.heading-icon.icon-right .fa {
+    float: right;
+    line-height: 2em !important;
+}
+
+/* */
+
+.stylus-widget-feature p:last-child, .stylus-widget.widget-feature p:last-child {
+    margin-bottom: 0;
+}
+
+.panel-primary {
+    border-color: $primary-color;
+}
+
+.panel-primary > .panel-heading {
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.panel {
+    margin-bottom: 0;
+}
+
+.panel > span.fa {
+    margin: 15px;
+}
+
+.panel span.fa {
+    color: $primary-color;
+}
+
+.panel-heading span.fa {
+    color: #ffffff !important;
+}
+
+.panel-heading > span.fa.left {
+    margin-right: 15px;
+}
+
+.panel-heading > span.fa.right {
+    margin-left: 15px;
+}
+
+.panel-title {
+    font-size: inherit !important;
+    line-height: 2em;
+}

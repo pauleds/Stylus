@@ -1,0 +1,10 @@
+@import '../_variables';
+
+.stylus-widget:not(.widget-dialog) {
+    margin-bottom: 30px;
+}
+
+.stylus-widget:not(.widget-button) {
+    @extend .clearfix;
+    clear: both;
+}

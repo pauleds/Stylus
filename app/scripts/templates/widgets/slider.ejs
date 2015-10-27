@@ -1,0 +1,28 @@
+<div id="<%= widget.id %>">
+
+  <div class="view-enhanced-content" aria-hidden="true">
+
+    <section class="wfs-slider widget-body">
+      <div id="<%= widget.id %>-slider" class="wfs-flexslider">
+        <ul class="wfs-slides">
+
+          <% var panels = widget.getPanels();
+          _.each( panels, function( panel ) { %>
+
+          <li id="<%= panel.id %>" class="slider-panel"> <% if ( widget.isCaptionTop() ) { %> <p class="wfs-caption"><%= panel.title %></p> <% } %>
+            <div class="inner">
+              <%= panel.content %>
+            </div> <% if ( widget.isCaptionBottom() ) { %> <p class="wfs-caption"><%= panel.title %></p> <% } %> </li>
+          <% } ) %>
+
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="view-simple-content">
+    <%= widget.getSimpleContent() %>
+  </div>
+
+</div>

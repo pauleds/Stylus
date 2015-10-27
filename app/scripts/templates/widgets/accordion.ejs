@@ -1,0 +1,40 @@
+<div id="<%= widget.id %>">
+
+  <div class="view-enhanced-content" aria-hidden="true">
+
+    <%
+    var originalId = widget.getOriginalId();
+    var attrs = ( typeof originalId !== 'undefined' ) ? ' id="'+ widget.id + '-' + originalId + '" ' : '';
+    %>
+
+    <ul class="accordion widget-body" data-accordion role="tablist" <%= attrs %>
+    data-options="multi_expand:<%= widget.isMultipleEnabled() %>;toggleable:<%= widget.isToggleableEnabled() %>;">
+
+      <%
+      var panels = widget.getPanels();
+      _.each( panels, function( panel ) {
+      %>
+
+      <li class="accordion-navigation">
+        <!-- -->
+        <a id="<%= panel.id %>-heading" class="control" href="#<%= panel.id %>" role="tab" aria-controls="<%= panel.id %>">
+          <%= panel.title %>
+        </a>
+        <!-- -->
+        <div id="<%= panel.id %>" class="content" role="tabpanel" aria-labelledby="<%= panel.id %>-heading">
+          <%= panel.content %>
+        </div>
+        <!-- -->
+      </li>
+
+      <% } ) %>
+
+    </ul>
+
+  </div>
+
+  <div class="view-simple-content">
+    <%= widget.getSimpleContent() %>
+  </div>
+
+</div>

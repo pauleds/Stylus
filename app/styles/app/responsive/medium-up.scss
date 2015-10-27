@@ -1,0 +1,68 @@
+@import '../_variables';
+
+@media #{$medium-up} {
+
+    .reveal-modal {
+        max-width: 920px;
+        min-height: 50%;
+    }
+
+    .align-left {
+        display: block;
+        float: left;
+        overflow: auto;
+        margin: 0 20px 20px 0;
+    }
+
+    .align-center {
+        display: block;
+        margin: 20px auto;
+        clear: both;
+    }
+
+    .align-right {
+        display: block;
+        float: right;
+        overflow: auto;
+        margin: 0 0 20px 20px;
+    }
+
+    #document-info > .inner, .page > .inner {
+        padding: 30px;
+    }
+
+    #app-main {
+        padding: 0 12px;
+    }
+
+    #document-header > .inner {
+        margin: 24px 0;
+    }
+
+    .tabs.vertical .heading-text {
+        display: block;
+        float: none;
+        line-height: 3em !important;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .tabs.vertical .heading-text.icon-left {
+        margin-bottom: -1rem;
+    }
+
+    .tabs.vertical .heading-text.icon-right {
+        margin-top: -1rem;
+    }
+
+    .tabs.vertical .heading-icon {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .tabs.vertical .icon-fa .heading-icon {
+        width: 54px;
+    }
+}

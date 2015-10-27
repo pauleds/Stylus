@@ -1,0 +1,53 @@
+<div id="<%= widget.id %>">
+
+  <div class="view-enhanced-content" aria-hidden="true">
+
+    <%
+    var panels = widget.getPanels();
+    var classVertical = ( widget.isVertical() ) ? ' vertical' : '';
+    %>
+
+    <div class="widget-body">
+
+      <ul class="tabs<%= classVertical %>" data-tab role="tablist">
+
+        <%
+        _.each( panels, function( panel, index ) {
+        var classActive = (index == 0) ? ' active' : '';
+        %>
+
+        <li class="tab-title<%= classActive %>" role="presentational">
+          <a href="#<%= panel.id %>" class="control" role="tab" tabindex="0" aria-selected="true" controls="<%= panel.id %>">
+            <%= panel.title %>
+          </a></li>
+
+        <% } ) %>
+
+      </ul>
+
+      <div class="tabs-content<%= classVertical %>">
+
+        <%
+        _.each( panels, function( panel, index ) {
+        var classActive = (index == 0) ? ' active' : '';
+        %>
+
+        <section role="tabpanel" aria-hidden="false" class="content<%= classActive %>" id="<%= panel.id %>">
+          <div class="inner">
+            <%= panel.content %>
+          </div>
+        </section>
+
+        <% } ) %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="view-simple-content">
+    <%= widget.getSimpleContent() %>
+  </div>
+
+</div>
